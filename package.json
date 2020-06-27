@@ -1,0 +1,28 @@
+{
+  "name": "romerol-example-code",
+  "version": "1.0.0",
+  "description": "rdf files parser",
+  "main": "index.js",
+  "scripts": {
+    "start": "node lib/rdf-parser.js",
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romerol/romerol-example-code.git"
+  },
+  "keywords": [
+    "parser",
+    "rdf",
+    "gutenberg"
+  ],
+  "author": "Lucas Romero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romerol/romerol-example-code/issues"
+  },
+  "homepage": "https://github.com/romerol/romerol-example-code#readme",
+  "devDependencies": {
+    "mocha": "^8.0.1"
+  }
+}
