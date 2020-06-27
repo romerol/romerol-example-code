@@ -3,8 +3,7 @@ const path = require("path");
 const { expect } = require("chai");
 const rdfParser = require("../lib/rdf-parser");
 
-describe("RDF parser tests", function () {
-  
+describe("RDF parser tests", function () {  
   describe("should parse the first real file", function () {
     let file = null;
 
