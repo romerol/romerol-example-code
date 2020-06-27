@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     authors: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true
     },
     publisher: {
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     subjects: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true
     },
     license: {

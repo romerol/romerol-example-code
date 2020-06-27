@@ -21,7 +21,7 @@ describe("Book tests", () => {
     expect(book.title.allowNull).to.be.eql(true);
 
     expect(book).to.have.property("authors");
-    expect(book.authors.type).to.be.eql(dataTypes.STRING);
+    expect(book.authors.type).to.be.eql(dataTypes.ARRAY(dataTypes.STRING));
     expect(book.authors.allowNull).to.be.eql(true);
 
     expect(book).to.have.property("publisher");
@@ -37,7 +37,7 @@ describe("Book tests", () => {
     expect(book.language.allowNull).to.be.eql(true);
 
     expect(book).to.have.property("subjects");
-    expect(book.subjects.type).to.be.eql(dataTypes.STRING);
+    expect(book.authors.type).to.be.eql(dataTypes.ARRAY(dataTypes.STRING));
     expect(book.subjects.allowNull).to.be.eql(true);
 
     expect(book).to.have.property("license");

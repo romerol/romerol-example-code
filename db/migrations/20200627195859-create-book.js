@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Books', {
@@ -18,7 +17,7 @@ module.exports = {
       },
       authors: {
         allowNull: true,
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       publisher: {
         allowNull: true,
@@ -34,7 +33,7 @@ module.exports = {
       },
       subjects: {
         allowNull: true,
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       license: {
         allowNull: true,
