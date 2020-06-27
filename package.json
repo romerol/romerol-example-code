@@ -8,6 +8,7 @@
     "migrate": "npx sequelize-cli --config config/database.js db:migrate --env $NODE_ENV",
     "undo-migration": "npx sequelize-cli --config config/database.js db:migrate:undo --env $NODE_ENV",
     "undo-all": "npx sequelize-cli --config config/database.js db:migrate:undo:all --env $NODE_ENV",
+    "create-migration": "npx sequelize-cli migration:create --name $FILE_NAME",
     "test": "nyc mocha test/*.js test/dbmodels/*.js"
   },
   "repository": {
