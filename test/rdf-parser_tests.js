@@ -8,7 +8,7 @@ describe("RDF parser tests", function () {
     let file = null;
 
     before(function () {
-      file = fs.readFileSync(path.join(__dirname, './files') + '/pg1.rdf');    
+      file = fs.readFileSync(path.join(__dirname, './rdf-files') + '/pg1.rdf');    
     });
   
     it("should parse the given file", function () {
@@ -34,7 +34,7 @@ describe("RDF parser tests", function () {
     let file = null;
 
     before(function () {
-      file = fs.readFileSync(path.join(__dirname, './files') + '/pg999999.rdf');    
+      file = fs.readFileSync(path.join(__dirname, './rdf-files') + '/pg999999.rdf');    
     });
   
     it("should parse the given file", function () {

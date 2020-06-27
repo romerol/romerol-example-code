@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node lib/rdf-parser.js",
-    "test": "nyc mocha test/*.js"
+    "migrate": "npx sequelize-cli --config config/database.js db:migrate --env $NODE_ENV",
+    "undo-migration": "npx sequelize-cli --config config/database.js db:migrate:undo --env $NODE_ENV",
+    "undo-all": "npx sequelize-cli --config config/database.js db:migrate:undo:all --env $NODE_ENV",
+    "test": "nyc mocha test/*.js test/dbmodels/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +29,9 @@
     "chai": "^4.2.0",
     "mocha": "^8.0.1",
     "nyc": "^15.1.0",
-    "sequelize-cli": "^6.1.0"
+    "sequelize-cli": "^6.1.0",
+    "sequelize-test-helpers": "^1.2.2",
+    "sinon": "^9.0.2"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
