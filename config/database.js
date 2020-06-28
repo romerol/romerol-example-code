@@ -16,7 +16,8 @@ function getDBConfig(configEnv) {
       "useUTC": true
     },
     "timezone": "+00:00",
-    "seederStorage": "sequelize"
+    "seederStorage": "sequelize",
+    "logging": false
   }
 }
 

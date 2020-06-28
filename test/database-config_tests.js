@@ -21,6 +21,7 @@ describe("DB config tests", function () {
         "seederStorage": "sequelize",
         "timezone": "+00:00",
         "username": secrets.TEST_DB_USER,
+        "logging": false
       });
     });
 
@@ -41,6 +42,7 @@ describe("DB config tests", function () {
         "seederStorage": "sequelize",
         "timezone": "+00:00",
         "username": secrets.DEV_DB_USER,
+        "logging": false
       });
     });
   });  
