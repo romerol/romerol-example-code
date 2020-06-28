@@ -2,6 +2,7 @@ const rdfParser = require("./lib/rdf-parser");
 const nodeDir = require("node-dir");
 const appConfig = require("./config/app-config");
 const path = require("path");
+const savedBooks = [];
 
 async function onEachFile(err, data, next) {
   if (err) {
@@ -10,7 +11,8 @@ async function onEachFile(err, data, next) {
   }
 
   try {
-    await rdfParser.parseFile(data);
+    const book = await rdfParser.parseFile(data);
+    savedBooks.push(book);
     next();
   } catch(e) {
     console.log("ERROR parsing file", e);
@@ -26,6 +28,12 @@ function onFinish(cb) {
     }
   
     console.log(`Finished parsing ${files.length} files`);
+    if (savedBooks.length === files.length) {
+      console.log("All the files were processed!")
+    } else {
+      console.log("Some files were not processed correctly!")
+    }
+
     cb();
   }
 }
