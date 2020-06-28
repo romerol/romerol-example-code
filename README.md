@@ -22,7 +22,8 @@ module.exports = {
 }
 ```
 
-- Download and extract the rds files from `http://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip` and place them a in a folder called `rdf-files` in the root of the project.
+- Get the rdf files: 
+- Manually by downloading and extracting the rds files from `http://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip` and placing them a in a folder called `rdf-files` in the root of the project - OR run `npm run download` to download them. A folder called `rdf-files` in the root of the project will be created with the files in it.
 - Install dependencies with `npm i`
 
 ## Running the app
@@ -35,7 +36,10 @@ module.exports = {
 - Run `npm test` to run the tests. Some tests will read some example rdf files which are located in the `test/rdf-files` folder and save them in the `gutenberg_db_test` DB. Once the tests have finished running then the `Books` table will be truncated.
 - The module `nyc` was added to provide code coverage capabilities and the results are displayed once the tests finish running. Also, the folder `test-results` will be created in the project root with a html page to check code coverage.
 
+## To do
 
+- Add tests for the download service. 
+- Plug download and processing.
 
 
 

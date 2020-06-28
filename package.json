@@ -10,7 +10,8 @@
     "undo-all": "npx sequelize-cli --config config/database.js db:migrate:undo:all --env $NODE_ENV",
     "create-migration": "npx sequelize-cli migration:create --name $FILE_NAME",
     "pretest": "NODE_ENV=test npm run migrate",
-    "test": "NODE_ENV=test nyc -r=text-summary -r=lcov -r=cobertura --clean --report-dir=./test-results mocha -t 10000 test/*.js test/dbmodels/*.js --exit"
+    "test": "NODE_ENV=test nyc -r=text-summary -r=lcov -r=cobertura --clean --report-dir=./test-results mocha -t 10000 test/*.js test/dbmodels/*.js --exit",
+    "download": "node ./lib/download-service"
   },
   "repository": {
     "type": "git",
@@ -36,11 +37,13 @@
     "sinon": "^9.0.2"
   },
   "dependencies": {
+    "adm-zip": "^0.4.16",
     "cheerio": "^1.0.0-rc.3",
     "moment": "^2.27.0",
     "node-dir": "^0.1.17",
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.2.2"
+    "sequelize": "^6.2.2",
+    "tar-fs": "^2.1.0"
   }
 }

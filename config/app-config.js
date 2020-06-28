@@ -4,6 +4,8 @@ function getFilesPath(env) {
 
 module.exports = {
   filesPath: getFilesPath(process.env),
+  tmpFolder: "./tmp",
+  downloadURL: "http://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip",
   getFilesPath
 };
 

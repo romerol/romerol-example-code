@@ -1,7 +1,15 @@
 const appConfig = require("../config/app-config");
 const { expect } = require("chai");
 
-describe("App config tests", function () {  
+describe("App config tests", function () { 
+  it("should have the correct URL", function () {
+    expect(appConfig.downloadURL).to.be.eql("http://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip");
+  });
+
+  it("should have the correct tmp folder", function () {
+    expect(appConfig.tmpFolder).to.be.eql("./tmp");
+  });  
+  
   describe("#getFilesPath", function () {
     it("should return the files path for test", function () {
       const env = {
