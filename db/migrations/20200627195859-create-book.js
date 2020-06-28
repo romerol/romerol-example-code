@@ -13,7 +13,7 @@ module.exports = {
       },
       title: {
         allowNull: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(2048)
       },
       authors: {
         allowNull: true,

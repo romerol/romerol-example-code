@@ -4,13 +4,13 @@
   "description": "project gutenberg rdf files parser",
   "main": "index.js",
   "scripts": {
-    "start": "node lib/rdf-parser.js",
+    "start": "NODE_ENV=dev npm run migrate && node -e 'require(\"./index\")(()=>{console.log(\"all finished\");})'",
     "migrate": "npx sequelize-cli --config config/database.js db:migrate --env $NODE_ENV",
     "undo-migration": "npx sequelize-cli --config config/database.js db:migrate:undo --env $NODE_ENV",
     "undo-all": "npx sequelize-cli --config config/database.js db:migrate:undo:all --env $NODE_ENV",
     "create-migration": "npx sequelize-cli migration:create --name $FILE_NAME",
     "pretest": "NODE_ENV=test npm run migrate",
-    "test": "NODE_ENV=test nyc mocha test/*.js test/dbmodels/*.js --exit"
+    "test": "NODE_ENV=test nyc mocha -t 10000 test/*.js test/dbmodels/*.js --exit"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "moment": "^2.27.0",
+    "node-dir": "^0.1.17",
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.2.2"

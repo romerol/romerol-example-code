@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { sequelize, dataTypes } = require("sequelize-test-helpers");
 const Book = require("../../db/models/book")(sequelize, dataTypes);
 
-describe("Book tests", () => {
+describe("DB Model Book tests", () => {
   it("should have the right properties", () => {
     const book = new Book();
 
@@ -17,7 +17,7 @@ describe("Book tests", () => {
     expect(book.gbId.allowNull).to.be.eql(false);
 
     expect(book).to.have.property("title");
-    expect(book.title.type).to.be.eql(dataTypes.STRING);
+    expect(book.title.type).to.be.eql(dataTypes.STRING(2048));
     expect(book.title.allowNull).to.be.eql(true);
 
     expect(book).to.have.property("authors");
