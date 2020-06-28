@@ -31,6 +31,8 @@ function onFinish(cb) {
 }
 
 module.exports = function _parseFiles_(cb) {
+  console.log("Processing...");
+
   const options = {
     match: /\.rdf$/
   };
