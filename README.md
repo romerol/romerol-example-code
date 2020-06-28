@@ -23,7 +23,8 @@ module.exports = {
 ```
 
 - Get the rdf files: 
-- Manually by downloading and extracting the rds files from `http://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip` and placing them a in a folder called `rdf-files` in the root of the project - OR run `npm run download` to download them. A folder called `rdf-files` in the root of the project will be created with the files in it.
+- Manually by downloading and extracting the rds files from `http://www.gutenberg.org/cache/epub/feeds/rdf-files.tar.zip` and placing them a in a folder called `rdf-files` in the root of the project
+- OR run `npm run download` to download them. A folder called `rdf-files` in the root of the project will be created with the files in it.
 - Install dependencies with `npm i`
 
 ## Running the app
