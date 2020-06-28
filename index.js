@@ -34,7 +34,8 @@ module.exports = function _parseFiles_(cb) {
   console.log("Processing...");
 
   const options = {
-    match: /\.rdf$/
+    match: /\.rdf$/,
+    exclude: ["pgNaN.rdf"]
   };
   const filesPath = path.join(__dirname, appConfig.filesPath);
 

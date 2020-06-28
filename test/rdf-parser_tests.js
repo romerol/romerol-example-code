@@ -55,5 +55,21 @@ describe("RDF parser tests", function () {
       expect(book.subjects).to.be.eql([]);
       expect(book.license).to.be.eql("Public domain in the USA.");
     });
+  });
+  
+  describe("should throw an error because it is unable to save a NaN in the gbId column", function () {
+    let file = null;
+
+    before(function () {
+      file = fs.readFileSync(path.join(__dirname, './rdf-files') + '/pgNaN.rdf');    
+    });
+  
+    it("should throw an error", async function () {
+      try {
+        await rdfParser.parseFile(file);
+      } catch (e) {
+        expect(e.message).to.be.eql("invalid input syntax for integer: \"NaN\"");
+      }
+    });
   });  
 });
