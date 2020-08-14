@@ -68,7 +68,7 @@ describe("RDF parser tests", function () {
       try {
         await rdfParser.parseFile(file);
       } catch (e) {
-        expect(e.message).to.be.eql("invalid input syntax for integer: \"NaN\"");
+        expect(e.message).to.be.eql("invalid input syntax for type integer: \"NaN\"");
       }
     });
   });  

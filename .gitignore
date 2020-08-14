@@ -105,7 +105,7 @@ dist
 
 secrets.js
 
-rdf-files
+./rdf-files
 test-results
 tmp
 
